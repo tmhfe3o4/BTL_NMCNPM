@@ -64,6 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\css\4095-rtl.css" />
     <Content Include="assets\css\4095-rtl.min.css" />
     <Content Include="assets\css\4095.css" />
