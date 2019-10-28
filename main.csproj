@@ -64,6 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Database.mdf" />
+    <Content Include="App_Data\Database_log.ldf">
+      <DependentUpon>Database.mdf</DependentUpon>
+    </Content>
     <Content Include="assets\css\4095-rtl.css" />
     <Content Include="assets\css\4095-rtl.min.css" />
     <Content Include="assets\css\4095.css" />
@@ -260,7 +264,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="database\Database.cs" />
+    <Compile Include="model\DataConnect.cs" />
     <Compile Include="ui\login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -10,11 +10,12 @@ namespace main.model
         private static Login instant = null;
         public String email;
         public String password;
-
+        public String strConnection;
         private Login()
         {
             email = "";
             password = "";
+            strConnection = "";
         }
         public static Login GetInstant
         {
