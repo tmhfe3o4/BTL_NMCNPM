@@ -264,7 +264,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="database\Database.cs" />
+    <Compile Include="model\DataConnect.cs" />
     <Compile Include="ui\login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
