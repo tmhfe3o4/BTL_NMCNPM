@@ -11,5 +11,14 @@ namespace main.ui.manage {
     
     
     public partial class material {
+        
+        /// <summary>
+        /// rptNguyenLieu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rptNguyenLieu;
     }
 }

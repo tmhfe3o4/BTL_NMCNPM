@@ -82,6 +82,7 @@
     <Content Include="assets\css\bootstrap-rtl.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\datatable.min.css" />
     <Content Include="assets\css\dataTables.bootstrap.css" />
     <Content Include="assets\css\demo.css" />
     <Content Include="assets\css\demo.min.css" />
@@ -196,6 +197,7 @@
     <Content Include="assets\js\charts\sparkline\sparkline-init.js" />
     <Content Include="assets\js\colorpicker\jquery.minicolors.js" />
     <Content Include="assets\js\colorpicker\jquery.minicolors.min.js" />
+    <Content Include="assets\js\datatable.min.js" />
     <Content Include="assets\js\datatable\datatables-init.js" />
     <Content Include="assets\js\datatable\dataTables.bootstrap.js" />
     <Content Include="assets\js\datatable\dataTables.bootstrap.min.js" />
@@ -533,6 +535,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ui\user\" />
     <Folder Include="utils\" />
   </ItemGroup>
   <PropertyGroup>

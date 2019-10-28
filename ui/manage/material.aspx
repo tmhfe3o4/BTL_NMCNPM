@@ -20,7 +20,7 @@
     <link href="../../assets/css/animate.min.css" rel="stylesheet" />
 
     <!--Page Related styles-->
-    <link href="../../assets/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="../../assets/css/datatable.min.css" rel="stylesheet" />
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="../../assets/js/skins.min.js"></script>
@@ -81,7 +81,7 @@
                         </a>
                     </li>
                     <!--Tables-->
-                    <li class="active open">
+                    <li>
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-table"></i>
                             <span class="menu-text">Quản lý user</span>
@@ -95,7 +95,7 @@
                                     <span class="menu-text">Simple & Responsive</span>
                                 </a>
                             </li>
-                            <li class="active">
+                            <li>
                                 <a href="tables-data.html">
                                     <span class="menu-text">Đổi mật khẩu</span>
                                 </a>
@@ -189,8 +189,8 @@
                     </li>
                     
                     <!--Right to Left-->
-                    <li>
-                        <a href="#" class="menu-dropdown">
+                    <li class="active open">
+                        <a href="material.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-align-right"></i>
                             <span class="menu-text">Quản lý nguyên liệu</span>
 
@@ -203,8 +203,8 @@
                                 </a>
                             </li>
 
-                            <li>
-                                <a href="index-rtl-fa.html">
+                            <li class="active">
+                                <a href="material.aspx">
                                     <span class="menu-text">Danh sách nguyên liệu</span>
                                 </a>
                             </li>
@@ -223,12 +223,11 @@
                     <ul class="breadcrumb">
                         <li>
                             <i class="fa fa-home"></i>
-                            <a href="#">Home</a>
+                            <a href="#">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="#">Tables</a>
+                            <a href="#">Quản lý nguyên liệu</a>
                         </li>
-                        <li class="active">Data Tables</li>
                     </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -239,7 +238,7 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <span class="widget-caption">Simple DataTable</span>
+                                    <span class="widget-caption">Danh sách nguyên liệu</span>
                                     <div class="widget-buttons">
                                         <a href="#" data-toggle="maximize">
                                             <i class="fa fa-expand"></i>
@@ -253,7 +252,37 @@
                                     </div>
                                 </div>
                                 <div class="widget-body">
-
+                                    <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
+                                        <table class="table table-striped table-hover table-bordered datatable no-footer" id="simpledatatable">
+							                <thead>
+								                <tr>
+									                <th class="text-center">STT</th>
+									                <th class="sorting_asc">Tên nguyên liệu</th>
+									                <th>Số lượng</th>
+									                <th>Đơn giá</th>
+                                                    <th>Đơn vị tính</th>
+									                <th>Tác vụ</th>
+								                </tr>
+							                </thead>
+							                <tbody>
+                                                <asp:Repeater ID="rptNguyenLieu" runat="server">
+                                                    <ItemTemplate>
+                                                        <tr>
+										                    <td class="text-center"><%# Container.ItemIndex+1 %></td>
+                                                            <td><%# Eval("ten") %></td>
+                                                            <td><%# Eval("so_luong") %></td>
+                                                            <td><%# Eval("don_gia") %></td>
+                                                            <td><%# Eval("don_vi") %></td>
+                                                            <td>
+                                                                <a href="#" class="btn btn-info btn-xs edit"><i class="fa fa-edit"></i> Edit</a>
+                                                                <a href="#" class="btn btn-danger btn-xs delete"><i class="fa fa-trash-o"></i> Delete</a>
+                                                            </td>
+									                    </tr>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+							                </tbody>
+						                </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -276,11 +305,32 @@
     <!--Beyond Scripts-->
     <script src="../../assets/js/beyond.min.js"></script>
 
+    
     <!--Page Related Scripts-->
-    <script src="../../assets/js/datatable/jquery.dataTables.min.js"></script>
     <script src="../../assets/js/datatable/ZeroClipboard.js"></script>
-    <script src="../../assets/js/datatable/dataTables.tableTools.min.js"></script>
-    <script src="../../assets/js/datatable/dataTables.bootstrap.min.js"></script>
-    <script src="../../assets/js/datatable/datatables-init.js"></script>
+    <script src="../../assets/js/datatable.min.js"></script>
+    <script>
+        $('.datatable').DataTable({
+            pageLength: 25,
+            lengthMenu: [[25, 50, 75, -1], [25, 50, 75, "All"]],
+            responsive: true,
+            dom: '<"html5buttons"B>lTfgitp',
+            buttons: [],
+            language: {
+                lengthMenu: "",
+                zeroRecords: "Không có dữ liệu",
+                info: "",
+                infoEmpty: "",
+                infoFiltered: "",
+                search:       "Tìm kiếm:",
+                paginate: {
+                    "sFirst":    "Đầu",
+                    "sPrevious": "Trước",
+                    "sNext":     "Tiếp",
+                    "sLast":     "Cuối"
+                }
+            }
+        });
+    </script>
 </body>
 </html>
