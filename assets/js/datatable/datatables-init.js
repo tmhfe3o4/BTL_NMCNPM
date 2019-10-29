@@ -4,7 +4,7 @@ var InitiateSimpleDataTable = function() {
             //Datatable Initiating
             var oTable = $('#simpledatatable').dataTable({
                 "sDom": "Tflt<'row DTTTFooter'<'col-sm-6'i><'col-sm-6'p>>",
-                "iDisplayLength": 5,
+                "iDisplayLength": 25,
                 "oTableTools": {
                     "aButtons": [
                         "copy", "csv", "xls", "pdf", "print"

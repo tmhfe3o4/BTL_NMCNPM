@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="material.aspx.cs" Inherits="main.ui.manage.material" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Customers.aspx.cs" Inherits="main.ui.Custormers.Customers" %>
 
 <!DOCTYPE html>
 
@@ -126,8 +126,8 @@
                         </ul>
                     </li>
                     <!--Charts-->
-                    <li>
-                        <a href="#" class="menu-dropdown">
+                    <li class = "active open">
+                        <a href="Custormers" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
 
@@ -135,8 +135,8 @@
                         </a>
 
                         <ul class="submenu">
-                            <li>
-                                <a href="morris.html">
+                            <li class="active">
+                                <a href="Customers.aspx">
                                     <span class="menu-text">Danh sách khách hàng</span>
                                 </a>
                             </li>
@@ -189,7 +189,7 @@
                     </li>
                     
                     <!--Right to Left-->
-                    <li class="active open">
+                    <li>
                         <a href="material.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-align-right"></i>
                             <span class="menu-text">Quản lý nguyên liệu</span>
@@ -198,7 +198,7 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="addmaterial.aspx">
+                                <a href="index-rtl-ar.html">
                                     <span class="menu-text">Thêm nguyên liệu</span>
                                 </a>
                             </li>
@@ -225,9 +225,10 @@
                             <i class="fa fa-home"></i>
                             <a href="#">Trang chủ</a>
                         </li>
-                        <li>
-                            <a href="#">Quản lý nguyên liệu</a>
-                        </li>
+                          <li>
+                            <a href="#">Quản lý khách hàng</a>
+                        </li>               
+
                     </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -238,7 +239,7 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <span class="widget-caption">Danh sách nguyên liệu</span>
+                                    <span class="widget-caption">Danh sách Khách hàng</span>
                                     <div class="widget-buttons">
                                         <a href="#" data-toggle="maximize">
                                             <i class="fa fa-expand"></i>
@@ -257,11 +258,11 @@
 							                <thead>
 								                <tr>
 									                <th class="text-center">STT</th>
-									                <th class="sorting_asc">Tên nguyên liệu</th>
-									                <th>Số lượng</th>
-									                <th>Đơn giá</th>
-                                                    <th>Đơn vị tính</th>
-									                <th>Tác vụ</th>
+									                <th class="sorting_asc">Tên Khách hàng</th>
+									                <th>Birthday</th>
+                                                    <th>Address</th>
+									                <th>Phone</th>
+                                                    <th>Email</th>
 								                </tr>
 							                </thead>
 							                <tbody>
@@ -269,14 +270,11 @@
                                                     <ItemTemplate>
                                                         <tr>
 										                    <td class="text-center"><%# Container.ItemIndex+1 %></td>
-                                                            <td><%# Eval("ten") %></td>
-                                                            <td><%# Eval("so_luong") %></td>
-                                                            <td><%# Eval("don_gia") %></td>
-                                                            <td><%# Eval("don_vi") %></td>
-                                                            <td>
-                                                                <asp:LinkButton ID="btnEdit" CssClass="btn btn-info btn-xs" ToolTip="Sửa nguyên liệu" OnClick="btnEdit_Click" runat="server" CommandArgument='<%# Eval("id") %>'><i class="fa fa-edit"></i> Edit</asp:LinkButton>
-                                                                <%--<asp:LinkButton ID="btnDelete" CssClass="btn btn-danger btn-xs" ToolTip="Xoá nguyên liệu" runat="server" OnClick="btnDelete_Click" OnClientClick="return confirm('Bạn có chắc chắn xoá nguyên liệu?')" CommandArgument='<%# Eval("id") %>'><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</asp:LinkButton>--%>
-                                                            </td>
+                                                            <td><%# Eval("name") %></td>
+                                                            <td><%# Eval("ngay_sinh") %></td>
+                                                            <td><%# Eval("dia_chi") %></td>
+                                                            <td><%# Eval("sdt") %></td>
+                                                            <td><%# Eval("email") %></td>                                                          
 									                    </tr>
                                                     </ItemTemplate>
                                                 </asp:Repeater>

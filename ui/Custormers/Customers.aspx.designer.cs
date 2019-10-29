@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace main.ui.manage {
+namespace main.ui.Custormers {
     
     
-    public partial class material {
+    public partial class Customers {
         
         /// <summary>
         /// rptNguyenLieu control.
