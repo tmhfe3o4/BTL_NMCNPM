@@ -82,6 +82,7 @@
     <Content Include="assets\css\bootstrap-rtl.min.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\datatable.min.css" />
     <Content Include="assets\css\dataTables.bootstrap.css" />
     <Content Include="assets\css\demo.css" />
     <Content Include="assets\css\demo.min.css" />
@@ -196,6 +197,7 @@
     <Content Include="assets\js\charts\sparkline\sparkline-init.js" />
     <Content Include="assets\js\colorpicker\jquery.minicolors.js" />
     <Content Include="assets\js\colorpicker\jquery.minicolors.min.js" />
+    <Content Include="assets\js\datatable.min.js" />
     <Content Include="assets\js\datatable\datatables-init.js" />
     <Content Include="assets\js\datatable\dataTables.bootstrap.js" />
     <Content Include="assets\js\datatable\dataTables.bootstrap.min.js" />
@@ -255,12 +257,27 @@
     <Content Include="assets\sound\alert.mp3" />
     <Content Include="assets\swf\copy_csv_xls.swf" />
     <Content Include="assets\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Global.asax" />
+    <Content Include="ui\login\dangnhap.aspx" />
     <Content Include="ui\login\Login.aspx" />
+    <Content Include="ui\manage\addmaterial.aspx" />
     <Content Include="ui\manage\material.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="database\Database.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ui\login\dangnhap.aspx.cs">
+      <DependentUpon>dangnhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\login\dangnhap.aspx.designer.cs">
+      <DependentUpon>dangnhap.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ui\login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -270,6 +287,13 @@
     </Compile>
     <Compile Include="model\Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ui\manage\addmaterial.aspx.cs">
+      <DependentUpon>addmaterial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\manage\addmaterial.aspx.designer.cs">
+      <DependentUpon>addmaterial.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ui\manage\material.aspx.cs">
       <DependentUpon>material.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -533,6 +557,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ui\user\" />
     <Folder Include="utils\" />
   </ItemGroup>
   <PropertyGroup>
