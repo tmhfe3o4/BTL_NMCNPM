@@ -257,6 +257,8 @@
     <Content Include="assets\sound\alert.mp3" />
     <Content Include="assets\swf\copy_csv_xls.swf" />
     <Content Include="assets\swf\copy_csv_xls_pdf.swf" />
+    <Content Include="Global.asax" />
+    <Content Include="ui\login\dangnhap.aspx" />
     <Content Include="ui\login\Login.aspx" />
     <Content Include="ui\manage\addmaterial.aspx" />
     <Content Include="ui\manage\material.aspx" />
@@ -266,6 +268,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="database\Database.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ui\login\dangnhap.aspx.cs">
+      <DependentUpon>dangnhap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\login\dangnhap.aspx.designer.cs">
+      <DependentUpon>dangnhap.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ui\login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
