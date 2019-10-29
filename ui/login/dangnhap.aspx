@@ -43,7 +43,7 @@
                     <asp:TextBox ID="txtPass" TextMode="Password" CssClass="form-control" runat="server" placeholder="Password"></asp:TextBox>
                 </div>
                 <div class="loginbox-submit">
-                    <asp:Button ID="btnLogin" class="btn btn-primary btn-block" runat="server" Text="Button" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" class="btn btn-primary btn-block" runat="server" Text="Đăng nhập" OnClick="btnLogin_Click" />
                 </div>
             </div>
             </form>
@@ -58,5 +58,25 @@
 
     <!--Beyond Scripts-->
     <script src="../../assets/js/beyond.js"></script>
+    <!--Page Related Scripts-->
+    <script src="../../assets/js/toastr/toastr.js"></script>
+    <script type="text/javascript">
+        toastr.options = {
+            top: 500,
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 5000
+        };
+        <% 
+        if (!Session["type"].Equals("")){
+            Response.Write("setTimeout(function() {" +
+                "toastr." + Session["type"] + "('" + Session["mess"] + "', 'Thông báo');" +
+                "}, 100);");
+            Session["type"] = "";
+            Session["mess"] = "";
+        }
+        %>
+    </script>
 </body>
 </html>

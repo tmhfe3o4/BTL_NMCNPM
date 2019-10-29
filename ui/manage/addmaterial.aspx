@@ -49,8 +49,8 @@
                 <!-- /Sidebar Collapse -->
                 <!-- Account Area and Settings --->
                 <div class="navbar-header pull-right">
-                    <div class="navbar-account">
-                        
+                    <div class="navbar-account" style="font-size: 16px; color: white; padding: 10px;">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
                     </div>
                 </div>
                 <!-- /Account Area and Settings -->
@@ -127,16 +127,15 @@
                     </li>
                     <!--Charts-->
                     <li>
-                        <a href="#" class="menu-dropdown">
+                        <a href="../Custormers/Customers.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
 
                             <i class="menu-expand"></i>
                         </a>
-
                         <ul class="submenu">
                             <li>
-                                <a href="morris.html">
+                                <a href="../Custormers/Customers.aspx">
                                     <span class="menu-text">Danh sách khách hàng</span>
                                 </a>
                             </li>
@@ -345,6 +344,24 @@
                 }
             }
         });
+    </script>
+    <script type="text/javascript">
+        toastr.options = {
+            top: 500,
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 5000
+        };
+        <% 
+        if (!Session["type"].Equals("")){
+            Response.Write("setTimeout(function() {" +
+                "toastr." + Session["type"] + "('" + Session["mess"] + "', 'Thông báo');" +
+                "}, 100);");
+            Session["type"] = "";
+            Session["mess"] = "";
+        }
+        %>
     </script>
 </body>
 </html>
