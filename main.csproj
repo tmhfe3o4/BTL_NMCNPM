@@ -1,4 +1,5 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -257,36 +258,16 @@
     <Content Include="assets\sound\alert.mp3" />
     <Content Include="assets\swf\copy_csv_xls.swf" />
     <Content Include="assets\swf\copy_csv_xls_pdf.swf" />
-    <Content Include="Global.asax" />
-    <Content Include="ui\Custormers\Customers.aspx" />
-    <Content Include="ui\login\dangnhap.aspx" />
     <Content Include="ui\login\Login.aspx" />
     <Content Include="ui\manage\addmaterial.aspx" />
+    <Content Include="ui\manage\addorder.aspx" />
     <Content Include="ui\manage\material.aspx" />
-    <Content Include="ui\user\changepass.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="database\Database.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="ui\Custormers\Customers.aspx.cs">
-      <DependentUpon>Customers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ui\Custormers\Customers.aspx.designer.cs">
-      <DependentUpon>Customers.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ui\login\dangnhap.aspx.cs">
-      <DependentUpon>dangnhap.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ui\login\dangnhap.aspx.designer.cs">
-      <DependentUpon>dangnhap.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ui\login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,19 +284,19 @@
     <Compile Include="ui\manage\addmaterial.aspx.designer.cs">
       <DependentUpon>addmaterial.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ui\manage\addorder.aspx.cs">
+      <DependentUpon>addorder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\manage\addorder.aspx.designer.cs">
+      <DependentUpon>addorder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ui\manage\material.aspx.cs">
       <DependentUpon>material.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ui\manage\material.aspx.designer.cs">
       <DependentUpon>material.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ui\user\changepass.aspx.cs">
-      <DependentUpon>changepass.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ui\user\changepass.aspx.designer.cs">
-      <DependentUpon>changepass.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -573,6 +554,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="ui\user\" />
     <Folder Include="utils\" />
   </ItemGroup>
   <PropertyGroup>

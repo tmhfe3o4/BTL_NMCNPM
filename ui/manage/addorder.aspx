@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="material.aspx.cs" Inherits="main.ui.manage.material" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addorder.aspx.cs" Inherits="main.ui.manage.addorder" %>
 
 <!DOCTYPE html>
 
@@ -226,7 +226,7 @@
                             <a href="#">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="#">Quản lý nguyên liệu</a>
+                            <a href="#">Quản lý Order</a>
                         </li>
                     </ul>
                 </div>
@@ -238,50 +238,82 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <span class="widget-caption">Danh sách nguyên liệu</span>
-                                    <div class="widget-buttons">
-                                        <a href="#" data-toggle="maximize">
-                                            <i class="fa fa-expand"></i>
-                                        </a>
-                                        <a href="#" data-toggle="collapse">
-                                            <i class="fa fa-minus"></i>
-                                        </a>
-                                        <a href="#" data-toggle="dispose">
-                                            <i class="fa fa-times"></i>
-                                        </a>
-                                    </div>
+                                    <%
+                                        if (Request.QueryString.Count > 0){
+                                    %>
+                                        <span class="widget-caption">Cập nhật Order</span>
+                                    <%
+                                        } else {
+                                    %>
+                                        <span class="widget-caption">Thêm Order</span>
+                                    <%
+                                        }
+                                    %>
                                 </div>
                                 <div class="widget-body">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <asp:Label ID="lblNoti" runat="server" CssClass=""></asp:Label>
+                                    </div>
                                     <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
-                                        <table class="table table-striped table-hover table-bordered datatable no-footer" id="simpledatatable">
-							                <thead>
-								                <tr>
-									                <th class="text-center">STT</th>
-									                <th class="sorting_asc">Tên nguyên liệu</th>
-									                <th>Số lượng</th>
-									                <th>Đơn giá</th>
-                                                    <th>Đơn vị tính</th>
-									                <th>Tác vụ</th>
-								                </tr>
-							                </thead>
-							                <tbody>
-                                                <asp:Repeater ID="rptNguyenLieu" runat="server">
-                                                    <ItemTemplate>
-                                                        <tr>
-										                    <td class="text-center"><%# Container.ItemIndex+1 %></td>
-                                                            <td><%# Eval("ten") %></td>
-                                                            <td><%# Eval("so_luong") %></td>
-                                                            <td><%# Eval("don_gia") %></td>
-                                                            <td><%# Eval("don_vi") %></td>
-                                                            <td>
-                                                                <asp:LinkButton ID="btnEdit" CssClass="btn btn-info btn-xs" ToolTip="Sửa nguyên liệu" OnClick="btnEdit_Click" runat="server" CommandArgument='<%# Eval("id") %>'><i class="fa fa-edit"></i> Edit</asp:LinkButton>
-                                                                <%--<asp:LinkButton ID="btnDelete" CssClass="btn btn-danger btn-xs" ToolTip="Xoá nguyên liệu" runat="server" OnClick="btnDelete_Click" OnClientClick="return confirm('Bạn có chắc chắn xoá nguyên liệu?')" CommandArgument='<%# Eval("id") %>'><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</asp:LinkButton>--%>
-                                                            </td>
-									                    </tr>
-                                                    </ItemTemplate>
-                                                </asp:Repeater>
-							                </tbody>
-						                </table>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Số bàn</label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="txtSoban" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Ngày đặt</label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="txtNgay" TextMode="DateTime" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Nhân viên</label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="listNhanvien" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                       <div class="form-group">
+                                            <label class="col-md-2 control-label">Khách hàng</label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="listKhachhang" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="col-md-2 control-label">Tên món</label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="txtTenmon" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Số lượng</label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="txtSoluong" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                         <div class="form-group">
+                                            <label class="col-md-2 control-label">Hóa đơn</label>
+                                            <div class="col-md-10">
+                                                <asp:TextBox ID="txtHoadon" CssClass="form-control" runat="server"></asp:TextBox>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-10">
+                                                <%
+                                                    if (Request.QueryString.Count > 0){
+                                                %>
+                                                        <asp:Button ID="btnUpdate" runat="server" OnClick="btnUpdate_Click" Text="Cập nhật nguyên liệu" CssClass="btn btn-primary" />
+                                                <%
+                                                    } else {
+                                                %>
+                                                        <asp:Button ID="btnSave" CssClass="btn btn-palegreen" OnClick="btnSave_Click" runat="server" Text="Lưu thông tin" />
+                                                <%
+                                                    }
+                                                %>
+                                            </div>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -304,8 +336,10 @@
 
     <!--Beyond Scripts-->
     <script src="../../assets/js/beyond.min.js"></script>
-
     
+    <!--Page Related Scripts-->
+    <script src="../../assets/js/toastr/toastr.js"></script>
+
     <!--Page Related Scripts-->
     <script src="../../assets/js/datatable/ZeroClipboard.js"></script>
     <script src="../../assets/js/datatable.min.js"></script>
@@ -334,3 +368,4 @@
     </script>
 </body>
 </html>
+

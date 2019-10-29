@@ -49,13 +49,8 @@
                 <!-- /Sidebar Collapse -->
                 <!-- Account Area and Settings --->
                 <div class="navbar-header pull-right">
-                    <div class="navbar-account" style="font-size: 16px; color: white; padding: 10px;">
-                        <a href="../login/dangnhap.aspx" style="color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-                    </div>
-                </div>
-                <div class="pull-right">
-                    <div class="navbar-account" style="font-size: 16px; color: white; padding: 10px;">
-                        <% Response.Write(Session["email"]); %>
+                    <div class="navbar-account">
+                        
                     </div>
                 </div>
                 <!-- /Account Area and Settings -->
@@ -101,7 +96,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="../user/changepass.aspx">
+                                <a href="tables-data.html">
                                     <span class="menu-text">Đổi mật khẩu</span>
                                 </a>
                             </li>
@@ -132,15 +127,16 @@
                     </li>
                     <!--Charts-->
                     <li>
-                        <a href="../Custormers/Customers.aspx" class="menu-dropdown">
+                        <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
 
                             <i class="menu-expand"></i>
                         </a>
+
                         <ul class="submenu">
                             <li>
-                                <a href="../Custormers/Customers.aspx">
+                                <a href="morris.html">
                                     <span class="menu-text">Danh sách khách hàng</span>
                                 </a>
                             </li>
@@ -349,24 +345,6 @@
                 }
             }
         });
-    </script>
-    <script type="text/javascript">
-        toastr.options = {
-            top: 500,
-            closeButton: true,
-            progressBar: true,
-            showMethod: 'slideDown',
-            timeOut: 5000
-        };
-        <% 
-        if (!Session["type"].Equals("")){
-            Response.Write("setTimeout(function() {" +
-                "toastr." + Session["type"] + "('" + Session["mess"] + "', 'Thông báo');" +
-                "}, 100);");
-            Session["type"] = "";
-            Session["mess"] = "";
-        }
-        %>
     </script>
 </body>
 </html>
