@@ -21,7 +21,7 @@ namespace main.ui.login
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Session["login"] = false;
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)

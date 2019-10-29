@@ -1,10 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addmaterial.aspx.cs" Inherits="main.ui.manage.addmaterial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="changepass.aspx.cs" Inherits="main.ui.user.changepass" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Quản lý nguyên liệu</title>
+    <title>Hệ thống quản lý nhà hàng Nam Sơn</title>
     <!--Basic Styles-->
     <link href="../../assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="../../assets/css/font-awesome.min.css" rel="stylesheet" />
@@ -49,8 +49,8 @@
                 <!-- /Sidebar Collapse -->
                 <!-- Account Area and Settings --->
                 <div class="navbar-header pull-right">
-                    <div class="navbar-account" style="font-size: 16px; color: white; padding: 10px;">
-                        <a href="../login/dangnhap.aspx" style="color: white;"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    <div class="navbar-account" style="font-size: 16px; padding: 10px;">
+                        <a href="../login/dangnhap.aspx" style="color: white; "><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
                     </div>
                 </div>
                 <div class="pull-right">
@@ -101,7 +101,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="../user/changepass.aspx">
+                                <a href="changepass.aspx">
                                     <span class="menu-text">Đổi mật khẩu</span>
                                 </a>
                             </li>
@@ -132,12 +132,13 @@
                     </li>
                     <!--Charts-->
                     <li>
-                        <a href="../Custormers/Customers.aspx" class="menu-dropdown">
+                        <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
 
                             <i class="menu-expand"></i>
                         </a>
+
                         <ul class="submenu">
                             <li>
                                 <a href="../Custormers/Customers.aspx">
@@ -230,7 +231,7 @@
                             <a href="#">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="#">Quản lý nguyên liệu</a>
+                            <a href="#">Đổi mật khẩu</a>
                         </li>
                     </ul>
                 </div>
@@ -242,63 +243,50 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <%
-                                        if (Request.QueryString.Count > 0){
-                                    %>
-                                        <span class="widget-caption">Cập nhật nguyên liệu</span>
-                                    <%
-                                        } else {
-                                    %>
-                                        <span class="widget-caption">Thêm nguyên liệu</span>
-                                    <%
-                                        }
-                                    %>
+                                    <span class="widget-caption">Đổi mật khẩu</span>
+                                    <div class="widget-buttons">
+                                        <a href="#" data-toggle="maximize">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                        <a href="#" data-toggle="collapse">
+                                            <i class="fa fa-minus"></i>
+                                        </a>
+                                        <a href="#" data-toggle="dispose">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="widget-body">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <asp:Label ID="lblNoti" runat="server" CssClass=""></asp:Label>
+                                    <div class="row">
+                                        <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
+                                            <div class="col-md-2"></div>
+                                            <div class="col-md-8">
+                                                <br /><br />
+                                                <div class="form-group">
+                                                    <label>Tên tài khoản</label>
+                                                    <asp:textbox id="tentaikhoan" runat="server" cssclass="form-control" enabled="false"></asp:textbox>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Mật khẩu cũ</label>
+                                                    <asp:textbox id="matkhaucu" runat="server" cssclass="form-control" placeholder="nhập mật khẩu cũ..." textmode="password"></asp:textbox>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Mật khẩu mới</label>
+                                                    <asp:textbox id="matkhaumoi" runat="server" cssclass="form-control" placeholder="nhập mật khẩu mới..." textmode="password"></asp:textbox>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Nhập lại mật khẩu mới</label>
+                                                    <asp:textbox id="nhaplaimatkhaumoi" runat="server" cssclass="form-control" placeholder="nhập lại mật khẩu mới..." textmode="password"></asp:textbox>
+                                                </div>
+                                                <div class="box-footer text-center">
+                                                    <asp:linkbutton id="btnCapNhatMatKhau" runat="server" cssclass="btn btn-primary" onclick="btnCapNhatMatKhau_Click">
+                                                        <i class="fa fa-check"></i>Cập nhật
+                                                    </asp:linkbutton>
+                                                    <asp:linkbutton id="btnHuy" runat="server" cssclass="btn btn-danger">Huỷ</asp:linkbutton>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
-                                    <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Tên món</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtTenMon" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Số lượng</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtSoLuong" TextMode="Number" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Đơn giá</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtDonGia" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Đơn vị tính</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtDVTinh" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <%
-                                                    if (Request.QueryString.Count > 0){
-                                                %>
-                                                        <asp:Button ID="btnFix" runat="server" OnClick="btnFix_Click" Text="Cập nhật nguyên liệu" CssClass="btn btn-primary" />
-                                                <%
-                                                    } else {
-                                                %>
-                                                        <asp:Button ID="btnSave" CssClass="btn btn-palegreen" OnClick="btnSave_Click" runat="server" Text="Lưu thông tin" />
-                                                <%
-                                                    }
-                                                %>
-                                            </div>
-                                        </div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -320,7 +308,6 @@
 
     <!--Beyond Scripts-->
     <script src="../../assets/js/beyond.min.js"></script>
-    
     <!--Page Related Scripts-->
     <script src="../../assets/js/toastr/toastr.js"></script>
 
