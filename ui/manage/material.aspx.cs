@@ -36,8 +36,14 @@ namespace main.ui.manage
                         rptNguyenLieu.DataBind();
                     }
                 }
-
             }
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)(sender);
+            string maNL = btn.CommandArgument;
+            Response.Redirect("addmaterial.aspx?manl=" + maNL);
         }
     }
 }
