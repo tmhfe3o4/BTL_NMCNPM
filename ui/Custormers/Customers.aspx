@@ -49,8 +49,8 @@
                 <!-- /Sidebar Collapse -->
                 <!-- Account Area and Settings --->
                 <div class="navbar-header pull-right">
-                    <div class="navbar-account">
-                        
+                    <div class="navbar-account" style="font-size: 16px; color: white; padding: 10px;">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
                     </div>
                 </div>
                 <!-- /Account Area and Settings -->
@@ -127,7 +127,7 @@
                     </li>
                     <!--Charts-->
                     <li class = "active open">
-                        <a href="Custormers.aspx" class="menu-dropdown">
+                        <a href="../Custormers/Customers.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
 

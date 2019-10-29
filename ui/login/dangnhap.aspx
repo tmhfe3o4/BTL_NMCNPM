@@ -43,7 +43,7 @@
                     <asp:TextBox ID="txtPass" TextMode="Password" CssClass="form-control" runat="server" placeholder="Password"></asp:TextBox>
                 </div>
                 <div class="loginbox-submit">
-                    <asp:Button ID="btnLogin" class="btn btn-primary btn-block" runat="server" Text="Button" OnClick="btnLogin_Click" />
+                    <asp:Button ID="btnLogin" class="btn btn-primary btn-block" runat="server" Text="Đăng nhập" OnClick="btnLogin_Click" />
                 </div>
             </div>
             </form>
