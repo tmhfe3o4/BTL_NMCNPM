@@ -49,8 +49,13 @@
                 <!-- /Sidebar Collapse -->
                 <!-- Account Area and Settings --->
                 <div class="navbar-header pull-right">
+                    <div class="navbar-account" style="font-size: 16px; padding: 10px;">
+                        <a href="../login/dangnhap.aspx" style="color: white; "><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+                    </div>
+                </div>
+                <div class="pull-right">
                     <div class="navbar-account" style="font-size: 16px; color: white; padding: 10px;">
-                        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                        <% Response.Write(Session["email"]); %>
                     </div>
                 </div>
                 <!-- /Account Area and Settings -->
