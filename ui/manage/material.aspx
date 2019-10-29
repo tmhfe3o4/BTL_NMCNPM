@@ -101,7 +101,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="tables-data.html">
+                                <a href="../user/changepass.aspx">
                                     <span class="menu-text">Đổi mật khẩu</span>
                                 </a>
                             </li>
