@@ -127,16 +127,15 @@
                     </li>
                     <!--Charts-->
                     <li>
-                        <a href="#" class="menu-dropdown">
+                        <a href="Customers.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
 
                             <i class="menu-expand"></i>
                         </a>
-
                         <ul class="submenu">
                             <li>
-                                <a href="morris.html">
+                                <a href="Customers.aspx">
                                     <span class="menu-text">Danh sách khách hàng</span>
                                 </a>
                             </li>
@@ -345,6 +344,24 @@
                 }
             }
         });
+    </script>
+    <script type="text/javascript">
+        toastr.options = {
+            top: 500,
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 5000
+        };
+        <% 
+        if (!Session["type"].Equals("")){
+            Response.Write("setTimeout(function() {" +
+                "toastr." + Session["type"] + "('" + Session["mess"] + "', 'Thông báo');" +
+                "}, 100);");
+            Session["type"] = "";
+            Session["mess"] = "";
+        }
+        %>
     </script>
 </body>
 </html>

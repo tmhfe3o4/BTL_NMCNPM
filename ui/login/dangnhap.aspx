@@ -58,5 +58,25 @@
 
     <!--Beyond Scripts-->
     <script src="../../assets/js/beyond.js"></script>
+    <!--Page Related Scripts-->
+    <script src="../../assets/js/toastr/toastr.js"></script>
+    <script type="text/javascript">
+        toastr.options = {
+            top: 500,
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 5000
+        };
+        <% 
+        if (!Session["type"].Equals("")){
+            Response.Write("setTimeout(function() {" +
+                "toastr." + Session["type"] + "('" + Session["mess"] + "', 'Thông báo');" +
+                "}, 100);");
+            Session["type"] = "";
+            Session["mess"] = "";
+        }
+        %>
+    </script>
 </body>
 </html>

@@ -258,6 +258,7 @@
     <Content Include="assets\swf\copy_csv_xls.swf" />
     <Content Include="assets\swf\copy_csv_xls_pdf.swf" />
     <Content Include="Global.asax" />
+    <Content Include="ui\Custormers\Customers.aspx" />
     <Content Include="ui\login\dangnhap.aspx" />
     <Content Include="ui\login\Login.aspx" />
     <Content Include="ui\manage\addmaterial.aspx" />
@@ -270,6 +271,13 @@
     <Compile Include="database\Database.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ui\Custormers\Customers.aspx.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\Custormers\Customers.aspx.designer.cs">
+      <DependentUpon>Customers.aspx</DependentUpon>
     </Compile>
     <Compile Include="ui\login\dangnhap.aspx.cs">
       <DependentUpon>dangnhap.aspx</DependentUpon>
