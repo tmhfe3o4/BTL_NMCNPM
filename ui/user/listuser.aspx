@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="changepass.aspx.cs" Inherits="main.ui.user.changepass" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="listuser.aspx.cs" Inherits="main.ui.user.listuser" %>
 
 <!DOCTYPE html>
 
@@ -101,7 +101,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="changepass.aspx">
+                                <a href="../user/changepass.aspx">
                                     <span class="menu-text">Đổi mật khẩu</span>
                                 </a>
                             </li>
@@ -231,7 +231,7 @@
                             <a href="#">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="#">Đổi mật khẩu</a>
+                            <a href="#">Quản lý nguyên liệu</a>
                         </li>
                     </ul>
                 </div>
@@ -243,7 +243,7 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <span class="widget-caption">Đổi mật khẩu</span>
+                                    <span class="widget-caption">Danh sách người dùng</span>
                                     <div class="widget-buttons">
                                         <a href="#" data-toggle="maximize">
                                             <i class="fa fa-expand"></i>
@@ -257,36 +257,32 @@
                                     </div>
                                 </div>
                                 <div class="widget-body">
-                                    <div class="row">
-                                        <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
-                                            <div class="col-md-2"></div>
-                                            <div class="col-md-8">
-                                                <br /><br />
-                                                <div class="form-group">
-                                                    <label>Tên tài khoản</label>
-                                                    <asp:textbox id="tentaikhoan" runat="server" cssclass="form-control" enabled="false"></asp:textbox>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Mật khẩu cũ</label>
-                                                    <asp:textbox id="matkhaucu" runat="server" cssclass="form-control" placeholder="Nhập mật khẩu cũ..." textmode="password"></asp:textbox>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Mật khẩu mới</label>
-                                                    <asp:textbox id="matkhaumoi" runat="server" cssclass="form-control" placeholder="Nhập mật khẩu mới..." textmode="password"></asp:textbox>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Nhập lại mật khẩu mới</label>
-                                                    <asp:textbox id="nhaplaimatkhaumoi" runat="server" cssclass="form-control" placeholder="Nhập lại mật khẩu mới..." textmode="password"></asp:textbox>
-                                                </div>
-                                                <div class="box-footer text-center">
-                                                    <asp:linkbutton id="btnCapNhatMatKhau" runat="server" cssclass="btn btn-primary" onclick="btnCapNhatMatKhau_Click">
-                                                        <i class="fa fa-check"></i>Cập nhật
-                                                    </asp:linkbutton>
-                                                    <asp:linkbutton id="btnHuy" runat="server" cssclass="btn btn-danger">Huỷ</asp:linkbutton>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
+                                    <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
+                                        <table class="table table-striped table-hover table-bordered datatable no-footer" id="simpledatatable">
+							                <thead>
+								                <tr>
+									                <th class="text-center">STT</th>
+									                <th class="sorting_asc">Tên tài khoản</th>
+									                <th>Tên nhân viên</th>
+									                <th>Bộ phận</th>
+									                <th>Trạng thái</th>
+								                </tr>
+							                </thead>
+							                <tbody>
+                                                <asp:Repeater ID="rptListUser" runat="server">
+                                                    <ItemTemplate>
+                                                        <tr>
+										                    <td class="text-center"><%# Container.ItemIndex+1 %></td>
+                                                            <td><%# Eval("email") %></td>
+                                                            <td><%# Eval("ten") %></td>
+                                                            <td><%# Eval("bo_phan") %></td>
+                                                            <td><%# Eval("status") %></td>
+									                    </tr>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+							                </tbody>
+						                </table>
+                                    </form>
                                 </div>
                             </div>
                         </div>

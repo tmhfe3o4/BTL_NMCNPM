@@ -264,6 +264,7 @@
     <Content Include="ui\manage\addmaterial.aspx" />
     <Content Include="ui\manage\material.aspx" />
     <Content Include="ui\user\changepass.aspx" />
+    <Content Include="ui\user\listuser.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -316,6 +317,13 @@
     </Compile>
     <Compile Include="ui\user\changepass.aspx.designer.cs">
       <DependentUpon>changepass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ui\user\listuser.aspx.cs">
+      <DependentUpon>listuser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ui\user\listuser.aspx.designer.cs">
+      <DependentUpon>listuser.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

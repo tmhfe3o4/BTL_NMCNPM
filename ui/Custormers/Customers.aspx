@@ -96,8 +96,8 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="tables-simple.html">
-                                    <span class="menu-text">Simple & Responsive</span>
+                                <a href="../user/listuser.aspx">
+                                    <span class="menu-text">Danh sách user/span>
                                 </a>
                             </li>
                             <li>
