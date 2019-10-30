@@ -231,7 +231,7 @@
                             <a href="#">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="#">Quản lý nguyên liệu</a>
+                            <a href="#">Danh sách user</a>
                         </li>
                     </ul>
                 </div>
@@ -243,7 +243,7 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <span class="widget-caption">Danh sách người dùng</span>
+                                    <span class="widget-caption">Danh sách user</span>
                                     <div class="widget-buttons">
                                         <a href="#" data-toggle="maximize">
                                             <i class="fa fa-expand"></i>
