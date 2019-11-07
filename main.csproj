@@ -262,7 +262,6 @@
     <Content Include="ui\login\dangnhap.aspx" />
     <Content Include="ui\login\Login.aspx" />
     <Content Include="ui\manage\addmaterial.aspx" />
-    <Content Include="ui\manage\addorder.aspx" />
     <Content Include="ui\manage\material.aspx" />
     <Content Include="ui\user\changepass.aspx" />
     <Content Include="ui\user\listuser.aspx" />
@@ -304,13 +303,6 @@
     </Compile>
     <Compile Include="ui\manage\addmaterial.aspx.designer.cs">
       <DependentUpon>addmaterial.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ui\manage\addorder.aspx.cs">
-      <DependentUpon>addorder.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ui\manage\addorder.aspx.designer.cs">
-      <DependentUpon>addorder.aspx</DependentUpon>
     </Compile>
     <Compile Include="ui\manage\material.aspx.cs">
       <DependentUpon>material.aspx</DependentUpon>
