@@ -174,12 +174,12 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="timeline.html">
+                                <a href="../manage/addorder.aspx">
                                     <span class="menu-text">Tạo phiếu order</span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="pricing.html">
+                            <li class="active">
+                                <a href="../manage/listorder.aspx">
                                     <span class="menu-text">Danh sách phiếu</span>
                                 </a>
                             </li>

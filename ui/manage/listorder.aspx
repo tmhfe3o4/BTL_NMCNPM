@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addmaterial.aspx.cs" Inherits="main.ui.manage.addmaterial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="listorder.aspx.cs" Inherits="main.ui.manage.listorder" %>
 
 <!DOCTYPE html>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -124,16 +125,17 @@
                         </ul>
                     </li>
                     <!--Charts-->
-                    <li>
+                    <li class = "active open">
                         <a href="../Custormers/Customers.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
 
                             <i class="menu-expand"></i>
                         </a>
+
                         <ul class="submenu">
                             <li>
-                                <a href="../Custormers/Customers.aspx">
+                                <a href="Customers.aspx">
                                     <span class="menu-text">Danh sách khách hàng</span>
                                 </a>
                             </li>
@@ -171,7 +173,7 @@
 
                             <i class="menu-expand"></i>
                         </a>
-                         <ul class="submenu">
+                        <ul class="submenu">
                             <li>
                                 <a href="../manage/addorder.aspx">
                                     <span class="menu-text">Tạo phiếu order</span>
@@ -186,7 +188,7 @@
                     </li>
                     
                     <!--Right to Left-->
-                    <li class="active open">
+                    <li>
                         <a href="material.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-align-right"></i>
                             <span class="menu-text">Quản lý nguyên liệu</span>
@@ -222,9 +224,10 @@
                             <i class="fa fa-home"></i>
                             <a href="#">Trang chủ</a>
                         </li>
-                        <li>
-                            <a href="#">Quản lý nguyên liệu</a>
-                        </li>
+                          <li>
+                            <a href="#">Quản lý Order</a>
+                        </li>               
+
                     </ul>
                 </div>
                 <!-- /Page Breadcrumb -->
@@ -235,63 +238,48 @@
                         <div class="col-xs-12 col-md-12">
                             <div class="widget">
                                 <div class="widget-header ">
-                                    <%
-                                        if (Request.QueryString.Count > 0){
-                                    %>
-                                        <span class="widget-caption">Cập nhật nguyên liệu</span>
-                                    <%
-                                        } else {
-                                    %>
-                                        <span class="widget-caption">Thêm nguyên liệu</span>
-                                    <%
-                                        }
-                                    %>
+                                    <span class="widget-caption">Danh sách Order</span>
+                                    <div class="widget-buttons">
+                                        <a href="#" data-toggle="maximize">
+                                            <i class="fa fa-expand"></i>
+                                        </a>
+                                        <a href="#" data-toggle="collapse">
+                                            <i class="fa fa-minus"></i>
+                                        </a>
+                                        <a href="#" data-toggle="dispose">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class="widget-body">
-                                    <div class="col-md-offset-2 col-md-10">
-                                        <asp:Label ID="lblNoti" runat="server" CssClass=""></asp:Label>
-                                    </div>
-                                    <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Tên món</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtTenMon" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Số lượng</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtSoLuong" TextMode="Number" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Đơn giá</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtDonGia" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-2 control-label">Đơn vị tính</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtDVTinh" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="col-md-offset-2 col-md-10">
-                                                <%
-                                                    if (Request.QueryString.Count > 0){
-                                                %>
-                                                        <asp:Button ID="btnFix" runat="server" OnClick="btnFix_Click" Text="Cập nhật nguyên liệu" CssClass="btn btn-primary" />
-                                                <%
-                                                    } else {
-                                                %>
-                                                        <asp:Button ID="btnSave" CssClass="btn btn-palegreen" OnClick="btnSave_Click" runat="server" Text="Lưu thông tin" />
-                                                <%
-                                                    }
-                                                %>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    <table class="table table-striped table-hover table-bordered datatable no-footer" id="simpledatatable">
+							            <thead>
+								            <tr>
+									            <th class="text-center">STT</th>
+									            <th class="sorting_asc">Số bàn</th>
+									            <th>Ngày đặt</th>
+                                                <th>Tên nhân viên</th>
+									            <th>Tên khách hàng</th>
+                                                <th>Tên món</th>
+                                                <th>Số lượng</th>
+								            </tr>
+							            </thead>
+							            <tbody>
+                                            <asp:Repeater ID="rpt_order" runat="server">
+                                                <ItemTemplate>
+                                                    <tr>
+										                <td class="text-center"><%# Container.ItemIndex+1 %></td>
+                                                        <td><%# Eval("soban") %></td>
+                                                        <td><%# Eval("ngay") %></td>
+                                                        <td><%# Eval("nhan_vien") %></td>
+                                                        <td><%# Eval("khach_hang") %></td>
+                                                        <td><%# Eval("ten_mon") %></td>      
+                                                        <td><%# Eval("so_luong") %></td>                                                      
+									                </tr>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+							            </tbody>
+						            </table>
                                 </div>
                             </div>
                         </div>
@@ -313,7 +301,6 @@
 
     <!--Beyond Scripts-->
     <script src="../../assets/js/beyond.min.js"></script>
-    
     <!--Page Related Scripts-->
     <script src="../../assets/js/toastr/toastr.js"></script>
 
@@ -363,3 +350,4 @@
     </script>
 </body>
 </html>
+

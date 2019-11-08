@@ -90,7 +90,7 @@
                         <ul class="submenu">
                             <li>
                                 <a href="../user/listuser.aspx">
-                                    <span class="menu-text">Danh sách user/span>
+                                    <span class="menu-text">Danh sách user</span>
                                 </a>
                             </li>
                             <li>

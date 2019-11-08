@@ -46,7 +46,7 @@ namespace main.ui.manage {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox listNhanvien;
+        protected global::System.Web.UI.WebControls.ListBox listNhanvien;
         
         /// <summary>
         /// listKhachhang control.
@@ -55,7 +55,7 @@ namespace main.ui.manage {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox listKhachhang;
+        protected global::System.Web.UI.WebControls.ListBox listKhachhang;
         
         /// <summary>
         /// txtTenmon control.
@@ -74,15 +74,6 @@ namespace main.ui.manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSoluong;
-        
-        /// <summary>
-        /// txtHoadon control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtHoadon;
         
         /// <summary>
         /// btnUpdate control.
