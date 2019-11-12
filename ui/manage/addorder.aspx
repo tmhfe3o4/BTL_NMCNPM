@@ -172,13 +172,13 @@
                             <i class="menu-expand"></i>
                         </a>
                         <ul class="submenu">
-                            <li>
-                                <a href="addorder.aspx">
+                            <li class="active">
+                                <a href="../manage/addorder.aspx">
                                     <span class="menu-text">Tạo phiếu order</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="pricing.html">
+                                <a href="../manage/listorder.aspx">
                                     <span class="menu-text">Danh sách phiếu</span>
                                 </a>
                             </li>
@@ -200,7 +200,7 @@
                                 </a>
                             </li>
 
-                            <li class="active">
+                            <li>
                                 <a href="material.aspx">
                                     <span class="menu-text">Danh sách nguyên liệu</span>
                                 </a>
@@ -267,13 +267,13 @@
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Nhân viên</label>
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="listNhanvien" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:ListBox ID="listNhanvien"  DataTextField="ten"  DataValueField="id" Rows="1" CssClass="form-control" runat="server"></asp:ListBox>
                                             </div>
                                         </div>
                                        <div class="form-group">
                                             <label class="col-md-2 control-label">Khách hàng</label>
                                             <div class="col-md-10">
-                                                <asp:TextBox ID="listKhachhang" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:ListBox ID="listKhachhang" DataTextField="name"  DataValueField="id" Rows="1" CssClass="form-control" runat="server"></asp:ListBox>
                                             </div>
                                         </div>
                                          <div class="form-group">
@@ -289,23 +289,17 @@
                                             </div>
                                         </div>
 
-                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Hóa đơn</label>
-                                            <div class="col-md-10">
-                                                <asp:TextBox ID="txtHoadon" CssClass="form-control" runat="server"></asp:TextBox>
-                                            </div>
-                                        </div>
 
                                         <div class="form-group">
                                             <div class="col-md-offset-2 col-md-10">
                                                 <%
                                                     if (Request.QueryString.Count > 0){
                                                 %>
-                                                        <asp:Button ID="btnUpdate" runat="server" Text="Cập nhật phiếu order" CssClass="btn btn-primary" />
+                                                        <asp:Button ID="btnUpdate" OnClick="btnUpdate_Click" runat="server" Text="Cập nhật phiếu order" CssClass="btn btn-primary" />
                                                 <%
                                                     } else {
                                                 %>
-                                                        <asp:Button ID="btnSave" CssClass="btn btn-palegreen" runat="server" Text="Lưu thông tin" />
+                                                        <asp:Button ID="btnSave"  OnClick="btnSave_Click" CssClass="btn btn-palegreen" runat="server" Text="Lưu thông tin" />
                                                 <%
                                                     }
                                                 %>
