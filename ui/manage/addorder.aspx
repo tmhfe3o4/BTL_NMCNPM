@@ -105,23 +105,7 @@
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-pencil-square-o"></i>
                             <span class="menu-text">Quản lý nhân sự</span>
-
-                            <i class="menu-expand"></i>
                         </a>
-
-                        <ul class="submenu">
-                            <li>
-                                <a href="form-layouts.html">
-                                    <span class="menu-text">Form Layouts</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="form-inputs.html">
-                                    <span class="menu-text">Form Inputs</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <!--Charts-->
                     <li>
@@ -164,7 +148,7 @@
                     </li>
                    
                     <!--Pages-->
-                    <li>
+                    <li class="active open">
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon glyphicon glyphicon-paperclip"></i>
                             <span class="menu-text">Quản lý phiếu order</span>
@@ -186,7 +170,7 @@
                     </li>
                     
                     <!--Right to Left-->
-                    <li class="active open">
+                    <li>
                         <a href="material.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-align-right"></i>
                             <span class="menu-text">Quản lý nguyên liệu</span>
@@ -356,6 +340,24 @@
                 }
             }
         });
+    </script>
+    <script type="text/javascript">
+        toastr.options = {
+            top: 500,
+            closeButton: true,
+            progressBar: true,
+            showMethod: 'slideDown',
+            timeOut: 5000
+        };
+        <% 
+        if (!Session["type"].Equals("")){
+            Response.Write("setTimeout(function() {" +
+                "toastr." + Session["type"] + "('" + Session["mess"] + "', 'Thông báo');" +
+                "}, 100);");
+            Session["type"] = "";
+            Session["mess"] = "";
+        }
+        %>
     </script>
     <script type="text/javascript">
         toastr.options = {

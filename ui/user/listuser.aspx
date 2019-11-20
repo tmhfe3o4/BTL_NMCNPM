@@ -79,7 +79,7 @@
                         </a>
                     </li>
                     <!--Tables-->
-                    <li>
+                    <li class="active open">
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-table"></i>
                             <span class="menu-text">Quản lý user</span>
@@ -88,7 +88,7 @@
                         </a>
 
                         <ul class="submenu">
-                            <li>
+                            <li class="active">
                                 <a href="../user/listuser.aspx">
                                     <span class="menu-text">Danh sách user</span>
                                 </a>
@@ -105,23 +105,7 @@
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-pencil-square-o"></i>
                             <span class="menu-text">Quản lý nhân sự</span>
-
-                            <i class="menu-expand"></i>
                         </a>
-
-                        <ul class="submenu">
-                            <li>
-                                <a href="form-layouts.html">
-                                    <span class="menu-text">Form Layouts</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="form-inputs.html">
-                                    <span class="menu-text">Form Inputs</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <!--Charts-->
                     <li>
@@ -187,7 +171,7 @@
                     </li>
                     
                     <!--Right to Left-->
-                    <li class="active open">
+                    <li>
                         <a href="material.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-align-right"></i>
                             <span class="menu-text">Quản lý nguyên liệu</span>
@@ -196,13 +180,13 @@
                         </a>
                         <ul class="submenu">
                             <li>
-                                <a href="addmaterial.aspx">
+                                <a href="../manage/addmaterial.aspx">
                                     <span class="menu-text">Thêm nguyên liệu</span>
                                 </a>
                             </li>
 
-                            <li class="active">
-                                <a href="material.aspx">
+                            <li>
+                                <a href="../manage/material.aspx">
                                     <span class="menu-text">Danh sách nguyên liệu</span>
                                 </a>
                             </li>

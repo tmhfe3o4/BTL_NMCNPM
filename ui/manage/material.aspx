@@ -21,6 +21,8 @@
 
     <!--Page Related styles-->
     <link href="../../assets/css/datatable.min.css" rel="stylesheet" />
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="../../assets/js/skins.min.js"></script>
@@ -105,23 +107,7 @@
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-pencil-square-o"></i>
                             <span class="menu-text">Quản lý nhân sự</span>
-
-                            <i class="menu-expand"></i>
                         </a>
-
-                        <ul class="submenu">
-                            <li>
-                                <a href="form-layouts.html">
-                                    <span class="menu-text">Form Layouts</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="form-inputs.html">
-                                    <span class="menu-text">Form Inputs</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <!--Charts-->
                     <li>
@@ -296,8 +282,6 @@
     </div>
 
     <!--Basic Scripts-->
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
     <script src="../../assets/js/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!--Beyond Scripts-->

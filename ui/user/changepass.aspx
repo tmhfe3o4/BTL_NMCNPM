@@ -79,7 +79,7 @@
                         </a>
                     </li>
                     <!--Tables-->
-                    <li>
+                    <li class= "active open">
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-table"></i>
                             <span class="menu-text">Quản lý user</span>
@@ -93,7 +93,7 @@
                                     <span class="menu-text">Danh sách user</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="active">
                                 <a href="changepass.aspx">
                                     <span class="menu-text">Đổi mật khẩu</span>
                                 </a>
@@ -187,7 +187,7 @@
                     </li>
                     
                     <!--Right to Left-->
-                    <li class="active open">
+                    <li>
                         <a href="material.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-align-right"></i>
                             <span class="menu-text">Quản lý nguyên liệu</span>
@@ -201,7 +201,7 @@
                                 </a>
                             </li>
 
-                            <li class="active">
+                            <li>
                                 <a href="material.aspx">
                                     <span class="menu-text">Danh sách nguyên liệu</span>
                                 </a>
