@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addmaterial.aspx.cs" Inherits="main.ui.manage.addmaterial" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="addmaterial.aspx.cs" Inherits="main.ui.manage.addmaterial" ValidateRequest="True" %>
 
 <!DOCTYPE html>
 
@@ -21,6 +21,8 @@
 
     <!--Page Related styles-->
     <link href="../../assets/css/datatable.min.css" rel="stylesheet" />
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/bootstrap.min.js"></script>
 
     <!--Skin Script: Place this script in head to load scripts for skins and rtl support-->
     <script src="../../assets/js/skins.min.js"></script>
@@ -105,23 +107,7 @@
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-pencil-square-o"></i>
                             <span class="menu-text">Quản lý nhân sự</span>
-
-                            <i class="menu-expand"></i>
                         </a>
-
-                        <ul class="submenu">
-                            <li>
-                                <a href="form-layouts.html">
-                                    <span class="menu-text">Form Layouts</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="form-inputs.html">
-                                    <span class="menu-text">Form Inputs</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <!--Charts-->
                     <li>
@@ -194,13 +180,13 @@
                             <i class="menu-expand"></i>
                         </a>
                         <ul class="submenu">
-                            <li>
+                            <li class="active">
                                 <a href="addmaterial.aspx">
                                     <span class="menu-text">Thêm nguyên liệu</span>
                                 </a>
                             </li>
 
-                            <li class="active">
+                            <li>
                                 <a href="material.aspx">
                                     <span class="menu-text">Danh sách nguyên liệu</span>
                                 </a>
@@ -253,27 +239,47 @@
                                     </div>
                                     <form method="POST" class="form-horizontal" runat="server" enctype="multipart/form-data">
                                         <div class="form-group">
-                                            <label class="col-md-2 control-label">Tên món</label>
+                                            <label class="col-md-2 control-label">Tên nguyên liệu</label>
                                             <div class="col-md-10">
                                                 <asp:TextBox ID="txtTenMon" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvTenMon" runat="server" 
+                                                    ErrorMessage="Vui lòng nhập tên món ăn !" 
+                                                    ValidateRequestMode="Enabled" 
+                                                    ControlToValidate="txtTenMon" ForeColor="Red" 
+                                                    Display="Static" ClientIDMode="Inherit"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Số lượng</label>
                                             <div class="col-md-10">
                                                 <asp:TextBox ID="txtSoLuong" TextMode="Number" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvSoLuong" runat="server" 
+                                                    ErrorMessage="Vui lòng nhập số lượng món ăn !" 
+                                                    ValidateRequestMode="Enabled" 
+                                                    ControlToValidate="txtSoLuong" ForeColor="Red" 
+                                                    Display="Static" ClientIDMode="Inherit"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Đơn giá</label>
                                             <div class="col-md-10">
                                                 <asp:TextBox ID="txtDonGia" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvDonGia" runat="server" 
+                                                    ErrorMessage="Vui lòng nhập vào đơn giá món ăn !" 
+                                                    ValidateRequestMode="Enabled" 
+                                                    ControlToValidate="txtDonGia" ForeColor="Red" 
+                                                    Display="Static" ClientIDMode="Inherit"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-2 control-label">Đơn vị tính</label>
                                             <div class="col-md-10">
                                                 <asp:TextBox ID="txtDVTinh" CssClass="form-control" runat="server"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvDonViTinh" runat="server" 
+                                                    ErrorMessage="Vui lòng nhập vào đơn vị tính !" 
+                                                    ValidateRequestMode="Enabled" 
+                                                    ControlToValidate="txtDVTinh" ForeColor="Red" 
+                                                    Display="Static" ClientIDMode="Inherit"></asp:RequiredFieldValidator>
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -307,8 +313,6 @@
     </div>
 
     <!--Basic Scripts-->
-    <script src="../../assets/js/jquery.min.js"></script>
-    <script src="../../assets/js/bootstrap.min.js"></script>
     <script src="../../assets/js/slimscroll/jquery.slimscroll.min.js"></script>
 
     <!--Beyond Scripts-->

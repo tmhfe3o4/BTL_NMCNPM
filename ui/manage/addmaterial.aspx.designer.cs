@@ -31,6 +31,15 @@ namespace main.ui.manage {
         protected global::System.Web.UI.WebControls.TextBox txtTenMon;
         
         /// <summary>
+        /// rfvTenMon control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTenMon;
+        
+        /// <summary>
         /// txtSoLuong control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace main.ui.manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSoLuong;
+        
+        /// <summary>
+        /// rfvSoLuong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSoLuong;
         
         /// <summary>
         /// txtDonGia control.
@@ -49,6 +67,15 @@ namespace main.ui.manage {
         protected global::System.Web.UI.WebControls.TextBox txtDonGia;
         
         /// <summary>
+        /// rfvDonGia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDonGia;
+        
+        /// <summary>
         /// txtDVTinh control.
         /// </summary>
         /// <remarks>
@@ -56,6 +83,15 @@ namespace main.ui.manage {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDVTinh;
+        
+        /// <summary>
+        /// rfvDonViTinh control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDonViTinh;
         
         /// <summary>
         /// btnFix control.

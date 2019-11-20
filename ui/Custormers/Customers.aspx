@@ -105,23 +105,7 @@
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-pencil-square-o"></i>
                             <span class="menu-text">Quản lý nhân sự</span>
-
-                            <i class="menu-expand"></i>
                         </a>
-
-                        <ul class="submenu">
-                            <li>
-                                <a href="form-layouts.html">
-                                    <span class="menu-text">Form Layouts</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="form-inputs.html">
-                                    <span class="menu-text">Form Inputs</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <!--Charts-->
                     <li class = "active open">

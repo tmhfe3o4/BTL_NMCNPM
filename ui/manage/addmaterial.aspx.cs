@@ -77,7 +77,7 @@ namespace main.ui.manage
                 }
                 else
                 {
-                    lblNoti.Text = "Thêm nguyên liệu không thành công";
+                    lblNoti.Text = "Thêm nguyên liệu không thành công!";
                     lblNoti.CssClass = "text-error";
                 }
             }

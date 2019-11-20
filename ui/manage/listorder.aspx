@@ -106,26 +106,10 @@
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon fa fa-pencil-square-o"></i>
                             <span class="menu-text">Quản lý nhân sự</span>
-
-                            <i class="menu-expand"></i>
                         </a>
-
-                        <ul class="submenu">
-                            <li>
-                                <a href="form-layouts.html">
-                                    <span class="menu-text">Form Layouts</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="form-inputs.html">
-                                    <span class="menu-text">Form Inputs</span>
-                                </a>
-                            </li>
-                        </ul>
                     </li>
                     <!--Charts-->
-                    <li class = "active open">
+                    <li>
                         <a href="../Custormers/Customers.aspx" class="menu-dropdown">
                             <i class="menu-icon fa fa-bar-chart-o"></i>
                             <span class="menu-text">Quản lý khách hàng</span>
@@ -135,7 +119,7 @@
 
                         <ul class="submenu">
                             <li>
-                                <a href="Customers.aspx">
+                                <a href="../Custormers/Customers.aspx">
                                     <span class="menu-text">Danh sách khách hàng</span>
                                 </a>
                             </li>
@@ -166,7 +150,7 @@
                     </li>
                    
                     <!--Pages-->
-                    <li>
+                    <li class= "active open">
                         <a href="#" class="menu-dropdown">
                             <i class="menu-icon glyphicon glyphicon-paperclip"></i>
                             <span class="menu-text">Quản lý phiếu order</span>
